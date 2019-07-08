@@ -11,8 +11,6 @@ from std_msgs.msg import Int32MultiArray
 mapping_rob1= rospy.Publisher('rob1_map', Int32MultiArray, queue_size=10)
 
 #initialize all variables
-
-
 # robot 1 current_position
 xR1=0
 yR1=0
@@ -81,7 +79,6 @@ def callback10(data):
     rospy.sleep(1)
 
 
-
 #initialize the node and set the subscribers
 def listener():
     #global the_map
@@ -100,8 +97,6 @@ def listener():
 
     while not rospy.is_shutdown():
         rospy.spin()
-
-
 
 #define a map(2D array of ones and zeros)
 
@@ -161,6 +156,7 @@ def rob1_map():
 
                       #print 'the map',the_map
              #printable_map.append(list1)
+
       print printable_map
       sendable_map = Int32MultiArray()
       sendable_map.data = printable_map

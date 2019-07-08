@@ -108,8 +108,8 @@ def listener():
 
 def rob4_map():
       printable_map = [] #The List of Lists
-      n=10  #no.of columns
-      m=10  #no.of rows
+      n=7  #no.of columns
+      m=7  #no.of rows
       the_map = []
       row = [0] *n
       for i in range(m):
