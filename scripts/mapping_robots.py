@@ -45,6 +45,9 @@ yO2=0
 rob_id=0
 
 rob2_pose=[]
+rob1_pose=[]
+rob3_pose=[]
+rob4_pose=[]
 
 
 #get all data from callbacks(positions of all robots and obstacles)
@@ -113,7 +116,8 @@ def listener():
     rospy.Subscriber('robot_to_be_moved', Int32, callback11)
 
     while not rospy.is_shutdown():
-        rospy.sleep(1)
+      rob_map()
+      rospy.sleep(1)
 
 
 
@@ -121,8 +125,8 @@ def listener():
 
 def rob_map():
       printable_map = [] #The List of Lists
-      n=10  #no.of columns
-      m=10  #no.of rows
+      n=7  #no.of columns
+      m=7  #no.of rows
       the_map = []
       row = [0] *n
       for i in range(m):
@@ -149,7 +153,9 @@ def rob_map():
 
 ########################### Mapping robot 1 ####################################
 
-      if (rob_id == 1):
+      if 1:
+          the_map = np.zeros((7,7))
+          printable_map = [] #The List of Lists
           the_map[0][0] = 4
           the_map[yR1][xR1] = 1
           the_map[yR2][xR2] = 4
@@ -188,8 +194,9 @@ def rob_map():
 
 
 ########################### Mapping robot 2 ####################################
-      if (rob_id == 2):
-
+      if 1:
+          the_map = np.zeros((7,7))
+          printable_map = [] #The List of Lists
           the_map[0][0] = 4
           the_map[yR1][xR1] = 4
           the_map[yR2][xR2] = 1
@@ -229,8 +236,9 @@ def rob_map():
 
 ########################### Mapping robot 3 ####################################
 
-      if (rob_id == 3):
-
+      if 1:
+          the_map = np.zeros((7,7))
+          printable_map = [] #The List of Lists
           the_map[0][0] = 4
           the_map[yR1][xR1] = 4
           the_map[yR2][xR2] = 4
@@ -270,8 +278,9 @@ def rob_map():
 
 ########################### Mapping robot 4 ####################################
 
-      if (rob_id == 4):
-
+      if 1:
+          the_map = np.zeros((7,7))
+          printable_map = [] #The List of Lists
           the_map[0][0] = 4
           the_map[yR1][xR1] = 4
           the_map[yR2][xR2] = 4

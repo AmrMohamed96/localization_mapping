@@ -12,7 +12,7 @@ import numpy as np
 import os
 
 # square side length in cm
-grid_dim = 17.5
+grid_dim = 0
 
 # reference april tag position
 x_ref=0
@@ -294,6 +294,9 @@ if __name__ == '__main__':
 		# initializing the ROS node
 		rospy.init_node('localization')
 		rospy.loginfo('%s started.' % rospy.get_name())
+
+		# get global grid parameters
+		grid_dim = rospy.get_param('/grid_dimension')
 
 		# Defining Publishing Rate
 		Rate = rospy.Rate(30)
